@@ -8,6 +8,9 @@ Source address if specified in settings.py
 $ parity --warp --rpcapi "eth,net,web3,personal,parity"
 ```
 
+### Setup account ###
+
+
 ### Running script###
 ```
 $ python3 app.py
