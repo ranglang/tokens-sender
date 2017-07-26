@@ -11,7 +11,8 @@ if __name__ == '__main__':
     if not result:
         print('Nothing to do')
     else:
-        address, amount = result
+        address = result['address']
+        amount = result['amount']
 
         print('csv line #{}: trying to send {} tokens to {}'.format(manager.current_line_number, amount, address))
         print('Press Enter to proceed')
@@ -28,7 +29,10 @@ if __name__ == '__main__':
         if amount > 12000:
             raise Exception('Seems too big amount')
 
-        eth.send_tokens(address, amount)
+        transaction_id = eth.send_tokens(address, amount)
+        print('Tx broadcasted https://etherscan.io/tx/{}'.format(transaction_id))
 
         # finally write to file
+        result['status'] = 'sent'
+        result['transaction_id'] = transaction_id
         manager.write_csv()

@@ -35,7 +35,8 @@ def send_tokens(address, amount):
 
     web3.personal.unlockAccount(from_address, settings.ACCOUNT_PASSWORD)
     tx_hash = contract.transact(tx).transfer(address, int(amount*100000000))
-    print('Tx broadcasted https://etherscan.io/tx/{}'.format(tx_hash))
+
+    return tx_hash
 
 
 if __name__ == "__main__":

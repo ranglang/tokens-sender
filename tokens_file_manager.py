@@ -25,24 +25,20 @@ class TokensFileManager:
 
 
     def get_last_line(self):
-        result = None
         self.current_line_number = 0
-
         for line in self.lines:
             self.current_line_number += 1
             if line['status'].strip() == '':
-                line['status'] = 'sent'
-                result = line['address'], line['amount']
-                break
+                return line
 
-        return result
+        return None
 
 
     def write_csv(self):
         with open(self.data_file, 'w') as csv_file:
             writer = csv.writer(csv_file, delimiter=';')
             for line in self.lines:
-                line_listed = [line['address'], line['amount'], line['status']]
+                line_listed = [line['address'], line['amount'], line['status'], line['transaction_id']]
                 writer.writerow(line_listed)
 
 
