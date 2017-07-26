@@ -5,13 +5,24 @@ Source address if specified in settings.py
 
 ### Get parity or geth run ###
 ```
-$ parity --warp --rpcapi "eth,net,web3,personal,parity"
+parity --warp --rpcapi "eth,net,web3,personal,parity"
+ssh root@parity.mysqterium.local -L 88545:localhost:8545
 ```
 
 ### Setup account ###
 
+## Setup Python3
+```
+brew install python3
+brew install pip3
+```
+
+## Install the requirements using pip
+```
+pip3 install -r requirements.txt
+```
 
 ### Running script###
 ```
-$ python3 app.py
+python3 app.py
 ```

@@ -1,10 +1,10 @@
-from web3 import Web3, KeepAliveRPCProvider, IPCProvider
+from web3 import Web3, KeepAliveRPCProvider
 import json
 import settings
 
 
 def get_web3():
-    return Web3(KeepAliveRPCProvider(host='localhost', port='8545'))
+    return Web3(KeepAliveRPCProvider(host='localhost', port='88545'))
 
 
 def get_contract(web3):
