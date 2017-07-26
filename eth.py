@@ -4,7 +4,7 @@ import settings
 
 
 def get_web3():
-    return Web3(KeepAliveRPCProvider(host='localhost', port='88545'))
+    return Web3(KeepAliveRPCProvider(host='localhost', port='18545'))
 
 
 def get_contract(web3):
