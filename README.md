@@ -6,7 +6,7 @@ Source address if specified in settings.py
 ### Get parity or geth run ###
 ```
 parity --warp --rpcapi "eth,net,web3,personal,parity"
-ssh root@parity.mysqterium.local -L 8545:localhost:8545
+ssh root@parity.mysterium.local -L 8545:localhost:8545
 ```
 
 ### Setup account ###
