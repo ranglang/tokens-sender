@@ -19,7 +19,8 @@ class TokensFileManager:
                 line = {
                     'address': row[0],
                     'amount': row[1],
-                    'status': row[2]
+                    'status': row[2],
+                    'transaction_id': row[3],
                 }
                 self.lines.append(line)
 
